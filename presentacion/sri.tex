@@ -1,0 +1,242 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 			Facultad de Ciencias, UAEM.							Agosto de 2014
+% 
+%	Alumno: 				Emanuel García Pérez
+%	Asginatura:				Catedra de Ciencias
+%	Proyecto:				Presentación - Artículo
+%	Tema:					"Desarrollo de un Sistema de Recuperación de Información
+%							para Documentos Científicos del Área de Ciencias de la 
+%   						Computación"
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass{beamer}
+
+\usepackage[spanish,activeacute]{babel}
+%\usepackage[utf8]{inputenc}
+\usepackage[latin1]{inputenc}
+\usepackage{beamerthemeshadow}
+\usepackage{graphicx}
+
+\title{\textbf{Desarrollo de un Sistema de Recuperaci\'on de Informaci\'on para Documentos Cient\'ificos del \'Area de Ciencias de la Computaci\'on}} 
+\author{Emanuel Garc\'ia P\'erez}
+\date{\today}
+
+\begin{document}
+
+\frame[allowframebreaks]{\titlepage}
+\section[Contenidos]{}
+\frame{
+\transdissolve[duration=0.2]
+\tableofcontents
+} 
+
+\section{INTRODUCCI\'ON}
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{Introducci\'on (I)}
+Hoy en d\'ia podemos tener acceso a casi cualquier informaci\'on desde cualquier parte del mundo a trav\'es de Internet. Administrar toda esta informaci\'on es una tarea muy compleja, debido a la cantidad de documentos disponibles en la web y la complejidad propia de cada uno de ellos.\\
+La informaci\'on se busca y recupera de diversas formas, una de ellas es usando motores de busqueda(buscadores). Estos buscadores han mejorado considerablemente, sin embargo los resultados que proveen al usuario no son del todo eficientes en cuanto a calidad y cantidad, \'ademas de presentar fallos en correlaci\'on con el objetivo de la b\'usqueda.
+}
+
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{Introducci\'on (II)}
+Debido a las deficiencias que presentan estas formas de recuperaci\'on de informaci\'on se busca desarrollar un sistema de recuperaci\'on de informaci\'on(SRI) de dominio especifico, en particular un meta-buscador que se oriente a la recuperaci\'on de documentos cient\'ificos de Ciencias de la Computaci\'on y establecer un ranking de estos, considerando para ello la calidad de cada uno de los documentos recuperados.
+}
+
+
+\section{ANTECEDENTES}
+\subsection{SRI para documentos cient\'ificos}
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{Sistema de Recuperaci\'on de Informaci\'on (I)}
+Un Sistema de Recuperaci\'on de Informaci\'on(SRI) es un proceso que posee capacidad para gestionar informaci\'on, es decir, recuperar, almacenar y mantener dicha informaci\'on para distintos fines, seg\'un el contexto de su aplicaci\'on.\\
+Existen diversas propuestas sobre la organizaci\'on interna de un SRI, se eligi\'o utilizar una que se basa en los siguientes elementos:
+}
+
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{Sistema de Recuperaci\'on de Informaci\'on (II)}
+\begin{itemize}
+\item Documentos: Constituyen la fuente de informaci\'on sobre la cual se pretende realizar b\'usquedas.
+\item Consultas: Son generadas por los usuarios del SRI que tienen por objetivo recuperar la informaci\'on a la cual el sistema provee acceso.
+\item Representaci\'on de los Documentos: Ser\'an las consultas y las relaciones que se definan entre ellos que sean definidas teniendo en cuenta el \'ambito de aplicaci\'on del SRI.
+\item Funci\'on de Evaluaci\'on: Determina la pertinencia de cada documento recuperado para dar soluci\'on a la consulta del usuario.
+\end{itemize}
+}
+
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{Sistema de Recuperaci\'on de Informaci\'on (III)}
+Los principales tipos de SRI que actualmente operan en Internet son: directorios(Yahoo), buscadores(Google), y meta-buscadores(Ixquick). Esto nos permite asegurar que existen implementaciones de SRI en Internet que utilizan diferentes m\'etodos de b\'usqueda sobre contextos generales o particulares, incluyendo implementaciones a medida para el incremento de la relevancia de los resultados a presentar al usuario.\\
+De estos se destacan notablemente los meta-buscadores, debido a que su modularidad permite que los componentes del SRI sean desarrollados a medida para cubrir las necesidades establecidas para una implementaci\'on particular.
+}
+
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{Sistema de Recuperaci\'on de Informaci\'on (IV)}
+Para desarrollar el SRI particular requerido por el presente trabajo, se considerar\'on los siguientes componentes: 
+\begin{enumerate}
+\item El componente que captura la consulta de usuario y la expande, generando consultas similares para expandir el espectro de b\'usqueda.
+\item El componente que accede a las fuentes de datos y recupera de cada una de ellas los documentos resultantes de la ejecuci\'on de una consulta.
+\item El componente que aplica la funci\'on de evaluaci\'on de los documentos obtenidos de cada fuente para ordenar el listado integral a presentar al usuario.
+\end{enumerate}
+}
+
+
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{SRI para documentos cient\'ificos de Ciencias de la Computaci\'on (I)}
+Hay diversas iniciativas para la generaci\'on de SRI de proposito especifico en \'areas particulares, pero no se encontr\'o evidencia de que existan implementaciones de SRI que sean aplicadas a bases de datos de documentos cient\'ificos del \'area de Ciencias de la Computaci\'on. \\
+Tampoco se encontr\'o evidencia de productos que implementen soluciones complementarias para aspectos clave, como la expansi\'on de las consultas considerando el contexto de la b\'usqueda y la aplicaci\'on de m\'etodos de evaluaci\'on de los documentos en base a la calidad de los mismos, con la finalidad de mejorar la relevancia de los elementos del listado de resultados a entregar al usuario.
+}
+
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{SRI para documentos cient\'ificos de Ciencias de la Computaci\'on (II)}
+Explotando las capacidades que poseen los meta-buscadores, se considero factible generar un SRI que utilice bases de datos de otros buscadores que sean especificos para la recuperaci\'on de documentos cient\'ificos de Ciencias de la Computaci\'on. Tambi\'en se opto por desarrollar componentes complementarios, tanto para el tratamiento de las consultas como para la aplicaci\'on de un algoritmo de ranking especifico para evaluar el tipo de resultados con el que se desea operar, seg\'un distintas m\'etricas, ampliamente aceptadas por la comunidad cient\'ifica, asignando a cada resultado una calificaci\'on que servir\'a de referencia para establecer el orden de los resultados para el usuario.
+}
+
+\subsection{Expansi\'on de la consultas en un SRI y ontolog\'ias}
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{Expansi\'on de consultas}
+Un SRI posee varias alternativas para lograr optimizar el proceso de b\'usqueda de informaci\'on, una de ellas consiste en tomar la consulta del usuario y ampliarla a partir de agregar diversos t\'erminos, obtenidos com\'unmente a trav\'es de fuentes externas, manteniendo coherencia con el dominio de la consulta. Este m\'etodo es conocido como expansi\'on de consultas(QE); los t\'erminos adicionales generan nuevas consultas, denominadas expansiones. De esta forma el SRI puede acceder a una mayor cantidad de documentos relevantes para el usuario, obteniendo listados de resultados individuales por cada expansi\'on, los cuales posteriormente son unificados y ponderados antes de ser presentados al usuario. 
+}
+
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{Ontolog\'ia (I)}
+Existen diferentas opciones para implementar un proceso de expansi\'on de consultas para un SRI, algunas son: tesauros, diccionarios, sistemas expertos, etc. Para el caso particular del SRI a generar se hace uso de una ontolog\'ia de dominio especifica para una sub\'area tem\'atica de las Ciencias de la Computaci\'on.\\
+Una ontolog\'ia se define como una forma de representar el conocimiento de un \'ambito especifico, que utiliza los t\'erminos y relaciones que conforman su vocabulario base, agregando elementos que permiten extender el vocabulario, como relaciones entre conceptos, permitiendo organizarlos jerarqu\'icamente.
+}
+ 
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{Ontolog\'ia (II)}
+Adaptando la definici\'on anterior al \'area de Ciencias de la Computaci\'on, se puede considerar a una ontolog\'ia como un esquema conceptual correspondiente a un dominio acotado, que permite la comunicaci\'on y la transmisi\'on de informaci\'on entre sistemas, tanto interna como externamente. Esto constituye una herramienta de gran utilidad para la recuperaci\'on y an\'alisis del conocimiento a trav\'es de una estrcutura de clases y subclases que adquiere sentido con las relaciones, propiedades y reglas definidas entre las instancias de las mismas.
+}
+
+\subsection{M\'etricas para la evaluaci\'on de documentos cient\'ificos}
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{Caracter\'isticas evaluables}
+Para desarrollar el m\'etodo particular para evaluar los documentos se opto por considerar las siguientes caracter\'isticas de los mismos: 
+\begin{enumerate}
+\item La calidad de la fuente de publicaci\'on, que hace referencia a d\'onde se ha publicado el art\'iculo, pudiendo ser una revista cient\'ifica o un congreso o reuni\'on cient\'ifica de caracter\'isticas similares.
+\item La calidad de los autores, valorando la importancia que hubieran tenido las publicaciones que hayan realizado a lo largo de su carrera.
+\item La calidad del art\'iculo en si, considerando la antiguedad del mismo y la cantidad de veces que haya sido citado en otros documentos.
+\end{enumerate}
+}
+
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{M\'etricas de evaluaci\'on (I)}
+Para cada una de las caracter\'isticas elegidas para valorar un art\'iculo se distinguen diversos indicadores bibliom\'etricos preexistentes que han sido validados por la comunidad cient\'ifica. A continuaci\'on se enuncian y explican aquellos que ser\'an utlizados para evaluar cada una de las caracter\'isticas establecidas.
+}
+
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{M\'etricas de evaluaci\'on (II)}
+\begin{itemize}
+\item Calidad de la fuente de publicaci\'on
+	\begin{enumerate}
+	\item Publicaci\'on en revista cient\'ifica
+		\begin{itemize}
+		\item Factor de Impacto (IF)
+		\item SCImago Journal Rank (SJR)
+		\end{itemize}
+	\item Publicaci\'on en Congreso o Evento Cient\'ifico
+		\begin{itemize}
+		\item Ranking CORE
+		\end{itemize}
+	\end{enumerate}
+\item Calidad de los autores
+	\begin{enumerate}
+	\item \'Indice H
+	\item \'Indice G
+	\end{enumerate}
+\item Calidad del art\'iculo
+	\begin{enumerate}
+	\item \'Indice AR
+	\item Cantidad de citas 
+	\end{enumerate}
+\end{itemize}
+}
+
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{M\'etricas de evaluaci\'on (III)}
+
+}
+
+
+\section{MATERIALES Y M\'ETODOS}
+\subsection{Estructura del SRI}
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{}
+Estructura del SRI.
+}
+
+\subsection{Funcionamiento del SRI}
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{}
+Funcionamiento del SRI.
+}
+
+\subsection{Expansi\'on de las consultas}
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{Construcci\'on de una ontolog\'ia}
+Construcci\'on.
+}
+
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{Desarrollo del m\'etodo de expansi\'on}
+Desarrollo del m\'etodo.
+}
+
+
+\subsection{Algoritmo de ranking}
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{Dise\~no del algoritmo}
+Disenio algoritmo.
+}
+
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{Desarrollo del algoritmo}
+Desarrollo algoritmo.
+}
+
+
+\section{EXPERIMENTACI\'ON}
+\subsection{Desarrollo del prototipo de SRI}
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{}
+Desarrollo del prototipo.
+}
+
+\subsection{Validaci\'on del SRI desarrollado}
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{}
+Validaci\'on del prototipo.
+}
+
+
+\section{CONCLUSIONES}
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{}
+Conlusiones finales.
+}
+
+\end{document}

@@ -1,0 +1,16 @@
+\beamer@endinputifotherversion {3.24pt}
+\select@language {spanish}
+\beamer@sectionintoc {2}{INTRODUCCI\'ON}{3}{0}{1}
+\beamer@sectionintoc {3}{ANTECEDENTES}{5}{0}{2}
+\beamer@subsectionintoc {3}{1}{SRI para documentos cient\'ificos}{5}{0}{2}
+\beamer@subsectionintoc {3}{2}{Expansi\'on de la consultas en un SRI y ontolog\'ias}{11}{0}{2}
+\beamer@subsectionintoc {3}{3}{M\'etricas para la evaluaci\'on de documentos cient\'ificos}{14}{0}{2}
+\beamer@sectionintoc {4}{MATERIALES Y M\'ETODOS}{18}{0}{3}
+\beamer@subsectionintoc {4}{1}{Estructura del SRI}{18}{0}{3}
+\beamer@subsectionintoc {4}{2}{Funcionamiento del SRI}{19}{0}{3}
+\beamer@subsectionintoc {4}{3}{Expansi\'on de las consultas}{20}{0}{3}
+\beamer@subsectionintoc {4}{4}{Algoritmo de ranking}{22}{0}{3}
+\beamer@sectionintoc {5}{EXPERIMENTACI\'ON}{24}{0}{4}
+\beamer@subsectionintoc {5}{1}{Desarrollo del prototipo de SRI}{24}{0}{4}
+\beamer@subsectionintoc {5}{2}{Validaci\'on del SRI desarrollado}{25}{0}{4}
+\beamer@sectionintoc {6}{CONCLUSIONES}{26}{0}{5}
