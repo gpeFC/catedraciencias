@@ -255,22 +255,115 @@ Para la implementaci\'on de este dise\~no de la ontolog\'ia se utilizo Prot\'eg\
 
 \frame{
 \transdissolve[duration=0.2]
-\frametitle{Desarrollo del m\'etodo de expansi\'on}
-
+\frametitle{Desarrollo del m\'etodo de expansi\'on (I)}
+Este m\'etodo obtendr\'a de la ontolog\'ia aquel concepto que guarde mayor similitud con la consulta ingresada por el usuario (consulta\_original) y a partir de ese concepto obtener los conceptos relacionados al mismo en forma impl\'icita y expl\'icita, padres, hermanos y sin\'onimos del t\'ermino. \\
+Para esto, el algoritmo de divide en dos etapas; primero se busca el concepto de la ontolog\'ia m\'as similar a la consulta\_original (concepto\_candidato) y despu\'es se efect\'ua la expansi\'on al disponer de los conceptos relacionados.
 }
+
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{Desarrollo del m\'etodo de expansi\'on (II)}
+La b\'usqueda del concepto\_candidato consta de los siguientes pasos:
+\begin{itemize}
+\item Para cada t\'ermino de la consulta\_original: se recorre la ontolog\'ia en su totalidad almacenando en una colecci\'on temporal aquellos conceptos con mayor cantidad de coincidencias. 
+\end{itemize}
+}
+
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{Desarrollo del m\'etodo de expansi\'on (III)}
+\begin{itemize}
+\item En base al contenido de la colecci\'on resultante del paso anterior:
+	\begin{itemize}
+	\item Si no hay elementos: finaliza la expansi\'on sin resultados validos.
+	\item Si hay un \'unico elemento: se le considera el concepto\_candidato.
+	\end{itemize}
+\end{itemize}
+}
+
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{Desarrollo del m\'etodo de expansi\'on (IV)}
+\begin{itemize}
+\item 
+	\begin{itemize}
+	\item Si tiene m\'as de un elemento: se analiza cada concepto cuantificando las coincidencias sint\'acticas respecto a la consulta\_original. Si hay empate, se eval\'ua al elemento seg\'un las relaciones que tenga en la ontolog\'ia:
+		\begin{itemize}
+		\item Si todos tienen el mismo "padre": el concepto es el concepto\_candidato.
+		\item Si no tienen el mismo "padre": se eval\'ua la cantidad de instancias contenidas por cada "padre", aquel con la mayor cantidad ser\'a el concepto\_candidato. En caso de otro empate: cada uno de los "padres" ser\'a considerado concepto\_candidato, conformando una colecci\'on nueva.
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+}
+
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{Desarrollo del m\'etodo de expansi\'on (V)}
+Con el o los candidatos determinados, se inicia la etapa de la expansi\'on, que consta de los siguientes pasos:
+\begin{itemize}
+\item Se obtiene el concepto "padre" (concepto\_padre) del concepto\_candidato.
+\item Se obtienen los conceptos del mismo nivel que el concepto\_candidato, dando lugar a la colecci\'on [conceptos\_hermanos].
+\item Se obtienen, en caso de existir, los sin\'onimos del concepto\_candidato, dando lugar a la colecci\'on [sin\'onimos\_concepto].
+\end{itemize}
+}
+
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{Desarrollo del m\'etodo de expansi\'on (VI)}
+\begin{itemize}
+\item Se expande la consulta\_original haciendo uso de los elementos obtenidos a trav\'es de los pasos anteriores, las expansiones quedan conformadas seg\'un las f\'ormulas 1 a 4:
+\begin{enumerate}
+\item Expansi\'on\_1 = consulta\_original AND concepto\_candidato
+\item Expansi\'on\_2 = concepto\_candidato AND concepto\_padre
+\item Expansi\'on\_3 = concepto\_candidato OR [conceptos\_hermanos]
+\item Expansi\'on\_4 = concepto\_candidato OR [sin\'onimos\_concepto]
+\end{enumerate}
+\end{itemize}
+Al finalizar el algoritmo se cuenta con las cuatro expansiones de la consulta\_original ingresada por el usuario.
+}
+
 
 
 \subsection{Algoritmo de ranking}
 \frame{
 \transdissolve[duration=0.2]
-\frametitle{Dise\~no del algoritmo}
-Disenio algoritmo.
+\frametitle{Normalizaci\'on de las m\'etricas}
+\begin{itemize}
+\item Calidad de la fuente de publicaci\'on
+	\begin{itemize}
+	\item Revista Cient\'ifica: \'Indice SJR
+		\begin{equation*}
+		fuentePublicacion = \log_{10}(SJR)
+		\end{equation*}
+	\item Congreso Cient\'ifico: Ranking CORE
+		\begin{equation*}
+		fuentePublicacion = [A*:1 | A:0.75 | B:0.5 | C:0.25]
+		\end{equation*}
+	\end{itemize}
+\item Calidad de los autores
+	\begin{itemize}
+	\item \'Indice H
+		\begin{equation*}
+		autores = \log_{10}(\sum_i\frac{indiceH_{autor_{i}}}{i})
+		\end{equation*}
+	\end{itemize}
+\item Calidad del art\'iculo
+	\begin{itemize}
+	\item \'Indice AR
+		\begin{equation*}
+		calidadPublicacion = \log_{10}(\frac{citasRecibidas}{antig\mbox{\"u}edadPublicacion})
+		\end{equation*}
+	\end{itemize}
+\end{itemize}
 }
 
 \frame{
 \transdissolve[duration=0.2]
-\frametitle{Desarrollo del algoritmo}
-Desarrollo algoritmo.
+\frametitle{Ranking del documento}
+\begin{equation*}
+	ranking = \alpha(fuentePublicacion) \ + \ \beta(autores) \ + \ \gamma(calidadPublicacion)
+\end{equation*}
+$$\alpha,\beta,\gamma\mbox{: son factores de ajuste entre 0 y 1}$$
 }
 
 
