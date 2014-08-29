@@ -35,14 +35,18 @@
 \subsection{SRI para documentos cient\'ificos}
 \frame{
 \transdissolve[duration=0.2]
-\frametitle{Sistema de Recuperaci\'on de Informaci\'on (I)}
-Un Sistema de Recuperaci\'on de Informaci\'on(SRI) es un proceso que posee capacidad para recuperar, almacenar y mantener informaci\'on para distintos fines, seg\'un el contexto de su aplicaci\'on.\\
-Existen diversas propuestas sobre la organizaci\'on(estructura) interna de un SRI, se eligi\'o utilizar una que se basa en los siguientes elementos:
+\frametitle{Sistema de Recuperaci\'on de Informaci\'on}
+Un Sistema de Recuperaci\'on de Informaci\'on(SRI) es un proceso que posee capacidad para recuperar, almacenar y mantener informaci\'on para distintos fines, seg\'un el contexto de su aplicaci\'on.
+\begin{figure}
+  \centering
+    \includegraphics[width=0.5\textwidth]{sist.jpg}
+  \label{fig:ejemplo}
+\end{figure}
 }
 
 \frame{
 \transdissolve[duration=0.2]
-\frametitle{Sistema de Recuperaci\'on de Informaci\'on (II)}
+\frametitle{Organizaci\'on de un SRI}
 \begin{itemize}
 \item Documentos: Fuente de informaci\'on sobre la cual se pretende realizar b\'usquedas.
 \item Consultas: Generadas por los usuarios del SRI que tienen por objetivo recuperar la informaci\'on a la cual el sistema provee acceso.
@@ -53,15 +57,20 @@ Existen diversas propuestas sobre la organizaci\'on(estructura) interna de un SR
 
 \frame{
 \transdissolve[duration=0.2]
-\frametitle{Sistema de Recuperaci\'on de Informaci\'on (III)}
-Los principales tipos de SRI que actualmente operan en Internet son: directorios(Yahoo), buscadores(Google), y meta-buscadores(Ixquick). Podemos asegurar que existen implementaciones de SRI en Internet que utilizan diferentes m\'etodos de b\'usqueda sobre contextos generales o particulares, incluyendo implementaciones particulares para el incremento de la relevancia de los resultados a presentar al usuario.\\
+\frametitle{Tipos de SRI}
+Los principales tipos de SRI que actualmente operan en Internet son: directorios(Yahoo), buscadores(Google), y meta-buscadores(Ixquick).
 Entre estos destacan los meta-buscadores, debido a que su modularidad permite que los componentes del SRI sean desarrollados para cubrir las necesidades establecidas para una implementaci\'on particular.
+\begin{figure}
+  \centering
+    \includegraphics[width=0.3\textwidth]{sri_s.jpg}
+  \label{fig:ejemplo}
+\end{figure}
 }
 
 \frame{
 \transdissolve[duration=0.2]
-\frametitle{Sistema de Recuperaci\'on de Informaci\'on (IV)}
-Para desarrollar el SRI particular requerido por el presente trabajo, se considerar\'on los siguientes componentes: 
+\frametitle{Implementaci\'on particular de SRI}
+Para desarrollar el SRI requerido por el presente trabajo, se considerar\'on los siguientes componentes: 
 \begin{enumerate}
 \item El componente que captura la consulta de usuario y la expande, generando consultas similares para expandir el espectro de b\'usqueda.
 \item El componente que accede a las fuentes de datos y recupera de cada una de ellas los documentos resultantes de la ejecuci\'on de una consulta.
@@ -73,21 +82,21 @@ Para desarrollar el SRI particular requerido por el presente trabajo, se conside
 \frame{
 \transdissolve[duration=0.2]
 \frametitle{SRI para documentos cient\'ificos de Ciencias de la Computaci\'on (I)}
-Hay diversas iniciativas para la generaci\'on de SRI de proposito especifico en \'areas particulares, pero no se encontr\'o evidencia de que existan implementaciones que sean aplicadas a bases de datos de documentos cient\'ificos de Ciencias de la Computaci\'on. \\
+Existen iniciativas para la generaci\'on de SRI de proposito especifico en \'areas particulares, pero no se encontr\'o evidencia de implementaciones que sean aplicadas a bases de datos de documentos cient\'ificos de Ciencias de la Computaci\'on. \\
 Tampoco se encontr\'o evidencia de productos que implementen soluciones complementarias para aspectos clave, como expansi\'on de consultas considerando el contexto de la b\'usqueda y la aplicaci\'on de m\'etodos de evaluaci\'on a los documentos en base a la calidad de los mismos.
 }
 
 \frame{
 \transdissolve[duration=0.2]
 \frametitle{SRI para documentos cient\'ificos de Ciencias de la Computaci\'on (II)}
-Explotando las capacidades que poseen los meta-buscadores, se consider\'o factible generar un SRI que utilice bases de datos de otros buscadores que sean especificos para la recuperaci\'on de documentos cient\'ificos. Tambi\'en se opto por desarrollar componentes complementarios, tanto para el tratamiento de las consultas como para la aplicaci\'on de un algoritmo de ranking especifico para evaluar el tipo de resultados con el que se desea operar, seg\'un distintas m\'etricas ampliamente aceptadas por la comunidad cient\'ifica, asignando a cada documento una calificaci\'on que servir\'a de referencia para establecer el orden de los resultados de la consulta.
+Explotando las capacidades que poseen los meta-buscadores, se consider\'o factible generar un SRI que utilice bases de datos de otros buscadores que sean especificos para la recuperaci\'on de documentos cient\'ificos. Tambi\'en se opto por desarrollar componentes complementarios, tanto para el tratamiento de las consultas como para la aplicaci\'on de un algoritmo de ranking especifico para evaluar el tipo de resultados con el que se desea operar, seg\'un distintas m\'etricas, asignando a cada documento una calificaci\'on que servir\'a de referencia para establecer el orden de los resultados de la consulta.
 }
 
 \subsection{Expansi\'on de la consultas en un SRI y ontolog\'ias}
 \frame{
 \transdissolve[duration=0.2]
 \frametitle{Expansi\'on de consultas}
-Un SRI posee varias alternativas para lograr optimizar el proceso de b\'usqueda de informaci\'on, una de ellas consiste en tomar la consulta del usuario y ampliarla a partir de agregar diversos t\'erminos, obtenidos com\'unmente a trav\'es de fuentes externas, manteniendo coherencia con el dominio de la consulta. Este m\'etodo es conocido como expansi\'on de consultas(QE); los t\'erminos adicionales generan nuevas consultas, denominadas expansiones. De esta forma el SRI puede acceder a una mayor cantidad de documentos relevantes para el usuario, obteniendo listados de resultados individuales por cada expansi\'on, los cuales posteriormente son unificados y ponderados antes de ser devueltos al usuario. 
+Un SRI posee varias alternativas para optimizar la de b\'usqueda de informaci\'on, una de ellas es tomar la consulta del usuario y ampliarla agregando diversos t\'erminos, manteniendo coherencia con el dominio de la consulta. Este m\'etodo es conocido como expansi\'on de consultas(QE); los t\'erminos adicionales generan nuevas consultas, denominadas expansiones. De esta forma el SRI puede acceder a una mayor cantidad de documentos relevantes para el usuario, obteniendo listados de resultados individuales por cada expansi\'on, los cuales posteriormente son unificados y ponderados antes de ser devueltos al usuario. 
 }
 
 \frame{
@@ -117,37 +126,8 @@ Para desarrollar el m\'etodo particular para evaluar los documentos se opto por 
 
 \frame{
 \transdissolve[duration=0.2]
-\frametitle{M\'etricas de evaluaci\'on (I)}
+\frametitle{M\'etricas de evaluaci\'on}
 Para cada una de las caracter\'isticas elegidas para valorar un art\'iculo se distinguen diversos indicadores bibliom\'etricos preexistentes que han sido validados por la comunidad cient\'ifica. A continuaci\'on se enuncian y explican aquellos que ser\'an utlizados para evaluar cada una de las caracter\'isticas establecidas.
-}
-
-\frame{
-\transdissolve[duration=0.2]
-\frametitle{M\'etricas de evaluaci\'on (II)}
-\begin{itemize}
-\item Calidad de la fuente de publicaci\'on
-	\begin{enumerate}
-	\item Publicaci\'on en revista cient\'ifica
-		\begin{itemize}
-		\item Factor de Impacto (IF)
-		\item SCImago Journal Rank (SJR)
-		\end{itemize}
-	\item Publicaci\'on en Congreso o Evento Cient\'ifico
-		\begin{itemize}
-		\item Ranking CORE
-		\end{itemize}
-	\end{enumerate}
-\item Calidad de los autores
-	\begin{enumerate}
-	\item \'Indice H
-	\item \'Indice G
-	\end{enumerate}
-\item Calidad del art\'iculo
-	\begin{enumerate}
-	\item \'Indice AR
-	\item Cantidad de citas 
-	\end{enumerate}
-\end{itemize}
 }
 
 \frame{
@@ -186,6 +166,9 @@ Para cada una de las caracter\'isticas elegidas para valorar un art\'iculo se di
 \frametitle{Calidad de los autores (II)}
 \begin{itemize}
 \item \'Indice G [Leo Egghe] \\ Los art\'iculos de un autor son ordenados de manera descendente de acuerdo con el n\'umero de citas recibidas por cada uno de ellos, similar al \'Indice H. Aquel n\'umero mayor en el orden del ranking donde la sumatoria de citas recibidas por el autor sea mayor o igual al cuadrado del n\'umero de mayor orden, es considerado como el \'indice G.
+\begin{equation*}
+	AR = \sqrt{\sum_{p \in H}\frac{cit_{p}}{ant_{p}}}
+\end{equation*}
 \end{itemize}
 }
 
@@ -371,23 +354,53 @@ $$\alpha,\beta,\gamma\mbox{: son factores de ajuste entre 0 y 1}$$
 \subsection{SRI: Desarrollo del prototipo}
 \frame{
 \transdissolve[duration=0.2]
-\frametitle{}
-Desarrollo del prototipo.
+\frametitle{Desarrollo}
+Para el desarrollo del meta-buscador(SRI) se utilizar\'on las siguientes tecnolog\'ias: {\bf Java, JSP, JavaScript, XHTML, y MySQL}. Para implementarse se utilizo como plataforma el servidor web {\bf Tomcat}.\\
+Proceso de implementaci\'on:
+\begin{itemize}
+\item Dise\~no y desarrollo de los m\'etodos para acceder, consultar y extraer los resultados.
+\item Implementaci\'on del algoritmo de ranking.
+\item Desarrollo de los componentes visuales(interfaz) del meta-buscador.
+\item Integraci\'on de los componentes en un \'unico sistema de software.
+\end{itemize}
 }
 
 \subsection{SRI: Validaci\'on del prototipo}
 \frame{
 \transdissolve[duration=0.2]
-\frametitle{}
-Validaci\'on del prototipo.
+\frametitle{Validaci\'on}
+Para la validaci\'on del meta-buscador se conto con un grupo de expertos en el desarrollo de m\'etodos de recuperaci\'on de informaci\'on, evaluar\'on al SRI considerando la relevancia de los documentos retornados a partir de diferentes consultas. Se eval\'uo el proceso completo de b\'usqueda: expansi\'on de la consulta, ejecuci\'on de las expansiones generadas y rankeo de los resultados obtenidos.
+}
+
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{Tabla de validaci\'on}
+\begin{figure}
+  \centering
+    \includegraphics[width=0.5\textwidth]{img_2.jpg}
+  \label{fig:ejemplo}
+\end{figure}
 }
 
 
 \section{CONCLUSIONES}
 \frame{
 \transdissolve[duration=0.2]
-\frametitle{}
-Conlusiones finales.
+\frametitle{Conclusiones}
+El SRI(meta-bsucador) dise\~nado y desarrollado en el presente trabajo, siendo una implementaci\'on particular, permitio recuperar documentos cient\'ificos de calidad comprobable del \'area de Ciencias de la Computaci\'on. \\
+Se alcanzar\'on buenos resultados al trabajar con diferentes componentes, como el acceso a multiples fuentes, expansiones de la conslta original del usuario, rankeo de cada resultado obtenido utilizando un algoritmo dise\~nado especificamente para este fin.
+}
+
+\section{BIBLIOGRAF\'IA}
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{Bibliograf\'ia}
+\begin{thebibliography}{99}
+\bibitem{}Desarrollo de un Sistema de Recuperaci\'on de Informaci\'on para Publicaciones
+Cient\'ificas del \'Area de Ciencias de la Computaci\'on. Kuna, H., Rey, M., Martini, E., Solonezen, L., Podkowa. Revista Latinoamericana de Ingenier\'ia de Software 2014.
+\bibitem{}THE AR-INDEX: COMPLEMENTING THE H-INDEX. Bihui Jin. National Library of Science CAS, Beijing, 100080, China. 2005-2007.
+\bibitem{}http://www.core.edu.au/
+\end{thebibliography}
 }
 
 \end{document}

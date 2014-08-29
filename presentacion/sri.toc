@@ -3,11 +3,12 @@
 \beamer@subsectionintoc {2}{1}{SRI para documentos cient\'ificos}{3}{0}{1}
 \beamer@subsectionintoc {2}{2}{Expansi\'on de la consultas en un SRI y ontolog\'ias}{9}{0}{1}
 \beamer@subsectionintoc {2}{3}{M\'etricas para la evaluaci\'on de documentos cient\'ificos}{12}{0}{1}
-\beamer@sectionintoc {3}{RECURSOS \& DISE\~NO}{20}{0}{2}
-\beamer@subsectionintoc {3}{1}{Estructura \& Funcionamiento del SRI}{20}{0}{2}
-\beamer@subsectionintoc {3}{2}{Expansi\'on de las consultas}{21}{0}{2}
-\beamer@subsectionintoc {3}{3}{Algoritmo de ranking}{31}{0}{2}
-\beamer@sectionintoc {4}{DESARROLLO \& APLICACI\'ON}{33}{0}{3}
-\beamer@subsectionintoc {4}{1}{SRI: Desarrollo del prototipo}{33}{0}{3}
-\beamer@subsectionintoc {4}{2}{SRI: Validaci\'on del prototipo}{34}{0}{3}
+\beamer@sectionintoc {3}{RECURSOS \& DISE\~NO}{19}{0}{2}
+\beamer@subsectionintoc {3}{1}{Estructura \& Funcionamiento del SRI}{19}{0}{2}
+\beamer@subsectionintoc {3}{2}{Expansi\'on de las consultas}{20}{0}{2}
+\beamer@subsectionintoc {3}{3}{Algoritmo de ranking}{30}{0}{2}
+\beamer@sectionintoc {4}{DESARROLLO \& APLICACI\'ON}{32}{0}{3}
+\beamer@subsectionintoc {4}{1}{SRI: Desarrollo del prototipo}{32}{0}{3}
+\beamer@subsectionintoc {4}{2}{SRI: Validaci\'on del prototipo}{33}{0}{3}
 \beamer@sectionintoc {5}{CONCLUSIONES}{35}{0}{4}
+\beamer@sectionintoc {6}{BIBLIOGRAF\'IA}{36}{0}{5}

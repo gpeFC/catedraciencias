@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.7.4)  29 AUG 2014 05:21
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.7.4)  29 AUG 2014 07:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -690,7 +690,17 @@ Package: beamerouterthemesplit 2012/10/16  (rcs-revision 51a8c72084af)
 (/usr/share/texmf/tex/latex/beamer/base/themes/font/beamerfontthemestructurebol
 d.sty
 Package: beamerfontthemestructurebold 2010/06/17  (rcs-revision d02a7cf4d8ae)
-)) (./sri.aux)
+)) (./sri.aux
+
+LaTeX Warning: Label `fig:ejemplo' multiply defined.
+
+
+LaTeX Warning: Label `fig:ejemplo' multiply defined.
+
+
+LaTeX Warning: Label `fig:ejemplo' multiply defined.
+
+)
 \openout1 = `sri.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
@@ -885,28 +895,51 @@ Overfull \hbox (187.79248pt too wide) has occurred while \output is active
 
 [2
 
-]
+] <sist.jpg, id=176, 405.515pt x 370.38374pt>
+File: sist.jpg Graphic file (type jpg)
+ <use sist.jpg>
+Package pdftex.def Info: sist.jpg used on input line 45.
+(pdftex.def)             Requested size: 153.64493pt x 140.3347pt.
+
+Overfull \vbox (7.26071pt too high) detected at line 45
+ []
+
+
 Overfull \hbox (187.79248pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [3
 
-]
+ <./sist.jpg>]
 Overfull \hbox (187.79248pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [4
 
-]
+] <sri_s.jpg, id=253, 250.9375pt x 272.01625pt>
+File: sri_s.jpg Graphic file (type jpg)
+ <use sri_s.jpg>
+Package pdftex.def Info: sri_s.jpg used on input line 68.
+(pdftex.def)             Requested size: 92.1879pt x 99.93053pt.
+pdfTeX warning (ext4): destination with the same identifier (name{fig:ejemplo})
+ has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.68 }
+      
+Overfull \vbox (7.65656pt too high) detected at line 68
+ []
+
+
 Overfull \hbox (187.79248pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [5
 
-]
+ <./sri_s.jpg>]
 Overfull \hbox (187.79248pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -984,6 +1017,15 @@ Overfull \hbox (187.79248pt too wide) has occurred while \output is active
 [16
 
 ]
+LaTeX Font Info:    Try loading font information for U+msa on input line 173.
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 173.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
 Overfull \hbox (187.79248pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -997,30 +1039,35 @@ Overfull \hbox (187.79248pt too wide) has occurred while \output is active
 
 [18
 
-]
+] <img1.png, id=752, 612.2875pt x 933.4875pt>
+File: img1.png Graphic file (type png)
+ <use img1.png>
+Package pdftex.def Info: img1.png used on input line 195.
+(pdftex.def)             Requested size: 122.91406pt x 187.39214pt.
+pdfTeX warning (ext4): destination with the same identifier (name{fig:ejemplo})
+ has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.195 }
+       
+Overfull \vbox (11.38896pt too high) detected at line 195
+ []
+
+
 Overfull \hbox (187.79248pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [19
 
-] <img1.png, id=756, 612.2875pt x 933.4875pt>
-File: img1.png Graphic file (type png)
- <use img1.png>
-Package pdftex.def Info: img1.png used on input line 212.
-(pdftex.def)             Requested size: 122.91406pt x 187.39214pt.
-
-Overfull \vbox (4.68588pt too high) detected at line 212
- []
-
-
+ <./img1.png>]
 Overfull \hbox (187.79248pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [20
 
- <./img1.png>]
+]
 Overfull \hbox (187.79248pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1084,6 +1131,10 @@ Overfull \hbox (187.79248pt too wide) has occurred while \output is active
 [29
 
 ]
+Overfull \vbox (2.28758pt too high) detected at line 341
+ []
+
+
 Overfull \hbox (187.79248pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1091,23 +1142,7 @@ Overfull \hbox (187.79248pt too wide) has occurred while \output is active
 [30
 
 ]
-LaTeX Font Info:    Try loading font information for U+msa on input line 358.
- (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 358.
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-Overfull \hbox (187.79248pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[31
-
-]
-Overfull \hbox (13.62007pt too wide) detected at line 367
+Overfull \hbox (13.62007pt too wide) detected at line 350
 \OT1/cmss/m/it/10.95 ranking \OT1/cmss/m/n/10.95 = \OML/cmm/m/it/10.95 \OT1/cm
 ss/m/n/10.95 (\OT1/cmss/m/it/10.95 fuentePublicacion\OT1/cmss/m/n/10.95 )  +  \
 OML/cmm/m/it/10.95 ^^L\OT1/cmss/m/n/10.95 (\OT1/cmss/m/it/10.95 autores\OT1/cms
@@ -1116,6 +1151,13 @@ s/m/n/10.95 )  +  \OML/cmm/m/it/10.95 ^^M\OT1/cmss/m/n/10.95 (\OT1/cmss/m/it/10
  []
 
 
+Overfull \hbox (187.79248pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[31
+
+]
 Overfull \hbox (187.79248pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1129,14 +1171,28 @@ Overfull \hbox (187.79248pt too wide) has occurred while \output is active
 
 [33
 
-]
+] <img_2.jpg, id=1286, 387.4475pt x 470.75874pt>
+File: img_2.jpg Graphic file (type jpg)
+ <use img_2.jpg>
+Package pdftex.def Info: img_2.jpg used on input line 383.
+(pdftex.def)             Requested size: 153.64493pt x 186.68394pt.
+pdfTeX warning (ext4): destination with the same identifier (name{fig:ejemplo})
+ has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.383 }
+       
+Overfull \vbox (10.68077pt too high) detected at line 383
+ []
+
+
 Overfull \hbox (187.79248pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [34
 
-]
+ <./img_2.jpg>]
 Overfull \hbox (187.79248pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1144,6 +1200,13 @@ Overfull \hbox (187.79248pt too wide) has occurred while \output is active
 [35
 
 ]
+Overfull \hbox (187.79248pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[36
+
+ </usr/share/texmf/tex/latex/beamer/base/art/beamericonarticle.pdf>]
 \tf@nav=\write6
 \openout6 = `sri.nav'.
 
@@ -1153,28 +1216,38 @@ Overfull \hbox (187.79248pt too wide) has occurred while \output is active
 \tf@snm=\write8
 \openout8 = `sri.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 393.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 393.
- (./sri.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 393.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 393.
-Package rerunfilecheck Info: File `sri.out' has not changed.
-(rerunfilecheck)             Checksum: 465E769BD63727A9E875219ABE6C6108;930.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 406.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 406.
 
+(./sri.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 406.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 406.
+
+
+Package rerunfilecheck Warning: File `sri.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `sri.out':
+(rerunfilecheck)             Before: 8B0193CC4BD1D4915DEA8EDEC1EA81FF;981
+(rerunfilecheck)             After:  F3838D076D04F124F1BE6CFEF8D404FE;981.
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 393.
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 406.
  ) 
 Here is how much of TeX's memory you used:
- 16066 strings out of 495028
- 299919 string characters out of 6181498
- 374249 words of memory out of 5000000
- 18795 multiletter control sequences out of 15000+600000
- 15102 words of font info for 56 fonts, out of 8000000 for 9000
+ 16115 strings out of 495028
+ 300962 string characters out of 6181498
+ 371300 words of memory out of 5000000
+ 18836 multiletter control sequences out of 15000+600000
+ 15396 words of font info for 57 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 49i,20n,62p,720b,714s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 49i,20n,62p,631b,680s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texl
@@ -1184,11 +1257,12 @@ t/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
 blic/amsfonts/cm/cmssi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmsy10.pfb>
-Output written on sri.pdf (35 pages, 234794 bytes).
+msfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmsy8.pfb>
+Output written on sri.pdf (36 pages, 339065 bytes).
 PDF statistics:
- 1361 PDF objects out of 1440 (max. 8388607)
- 1279 compressed objects within 13 object streams
- 85 named destinations out of 1000 (max. 500000)
- 192 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1449 PDF objects out of 1728 (max. 8388607)
+ 1357 compressed objects within 14 object streams
+ 89 named destinations out of 1000 (max. 500000)
+ 215 words of extra memory for PDF output out of 10000 (max. 10000000)
 
