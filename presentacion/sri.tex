@@ -166,10 +166,10 @@ Para cada una de las caracter\'isticas elegidas para valorar un art\'iculo se di
 \frametitle{Calidad de los autores (II)}
 \begin{itemize}
 \item \'Indice G [Leo Egghe] \\ Los art\'iculos de un autor son ordenados de manera descendente de acuerdo con el n\'umero de citas recibidas por cada uno de ellos, similar al \'Indice H. Aquel n\'umero mayor en el orden del ranking donde la sumatoria de citas recibidas por el autor sea mayor o igual al cuadrado del n\'umero de mayor orden, es considerado como el \'indice G.
-\begin{equation*}
-	AR = \sqrt{\sum_{p \in H}\frac{cit_{p}}{ant_{p}}}
-\end{equation*}
 \end{itemize}
+\begin{equation*}
+	g^{2} \leq \sum_{i \leq g}c_{i}
+\end{equation*}
 }
 
 \frame{
@@ -177,6 +177,9 @@ Para cada una de las caracter\'isticas elegidas para valorar un art\'iculo se di
 \frametitle{Calidad del art\'iculo}
 \begin{itemize}
 \item \'Indice AR [Bihui Jin] \\ Permite evaluar la calidad de una colecci\'on de publicaciones, este indicador combina la cantidad de citas con la antig\"uedad de cada publicaci\'on, para as\'i establecer una valoraci\'on de la colecci\'on. Es un \'indice complementario del \'Indice H.
+\begin{equation*}
+	AR = \sqrt{\sum_{p \in H}\frac{cit_{p}}{ant_{p}}}
+\end{equation*}
 \item Cantidad de citas \\ La cantidad de citas recibidas, por s\'i solas, tambi\'en es utilizada como m\'etrica para evaluar la calidad de un documento cient\'ifico en particular.
 \end{itemize}
 }
